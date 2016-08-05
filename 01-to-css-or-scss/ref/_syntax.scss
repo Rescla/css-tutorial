@@ -1,0 +1,33 @@
+div {
+  // Selector, just as you would in CSS
+}
+
+div span {
+  // CSS child selectors are also supported
+}
+
+div {
+  span {
+    // But you can also nest them like so!
+    // Rules in this block compile to "div span"
+  }
+}
+
+div {
+  &.blue {
+    // The & refers to the element of the current block, so this compiles to div.blue
+    // This is useful for de-duplication, readability and pseudo elements
+
+    &:before {
+      // here a pseudo element is defined, compiles to: "div.blue:before"
+    }
+  }
+}
+
+div.blue {
+  div & {
+    // You can do fancy stuff with the & selector, like shown here
+    // This compiles to "div div.blue", so it's not the usual 'top to bottom' flow
+    // While this can be useful, it can be confusing and you may have to split up nested code to get the desired effect
+  }
+}

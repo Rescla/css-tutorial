@@ -1,0 +1,21 @@
+div {
+  width: 500px;
+  height: 500px;
+
+  &.red {
+    background: red;
+
+    div {
+      width: 50%;
+      height: 50%;
+
+      &.blue {
+        background: blue;
+      }
+
+      &.green {
+        background: green;
+      }
+    }
+  }
+}

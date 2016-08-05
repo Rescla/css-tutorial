@@ -1,0 +1,24 @@
+/* This selector selects all 'div' elements, so for example <div></div> but not <span></span> */
+div {
+    width: 500px;       /* Specifies width in pixels */
+    height: 500px;      /* CSS has various units for measurements, px being one of those */
+}
+
+/* This selector adds the '.' or class. In this case it only applies to <div class="red"></div>, but also to <div class="red other"></div> */
+div.red {
+    background: red;    /* Specifies the backgroun, in this case a flat color. Here we use a web color name, but there are other ways to notate colors */
+}
+
+/* This selector selects divs with class "blue" that are also inside divs with class "red", a space denoting child or nested elements */
+div.red div.blue {
+    background: blue;
+    width: 50%;         /* Notice that this overrules the 'width: 500px' we defined for <div> elements before. We will tackle rule priority later on. */
+    height: 50%;
+}
+
+/* This selector does the same as the previous, but only applies to "green" inside "red" */
+div.red div.green {
+    background: green;
+    width: 50%;
+    height: 50%;
+}
