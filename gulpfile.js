@@ -26,8 +26,8 @@ gulp.task('serve', ['sass'], function(){
 
 // Define the 'sass' task to compile all scss files to their css counterparts
 gulp.task('sass', function() {
-    return gulp.src('**/*.scss')                    // Define source files using glob notation
-        .pipe(sourcemaps.init())                   // Initialize sourcemapping
+    return gulp.src( process.cwd() + '/**/*.scss')  // Define source files using glob notation and working directory
+        .pipe(sourcemaps.init())                    // Initialize sourcemapping
         .pipe(sass().on('error', sass.logError))    // Pipe it to gulp-sass
         .pipe(sourcemaps.write())                   // Compile sourcemaps based on changes done by sass
         .pipe(gulp.dest('./'))                      // Define destination, use the same location as the source
