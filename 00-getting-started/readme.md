@@ -74,3 +74,15 @@ git archive --format=zip -o css-tutorial.zip HEAD
 ```
 
 For more info about git archive: https://git-scm.com/docs/git-archive
+
+### Git Checkout
+Want to quicky reset a folder to its last committed state, throwing away all changes? Use the following command:
+```
+git checkout ./
+```
+**WARNING** This will throw away all changes in the current working directory, so make sure you run it on a tutorial folder 
+and 
+not the entire project! 
+
+I recommend copying the folder first, so you don't lose your old changes. Git checkout can also checkout individual 
+files, if an entire folder is too much for your tastes. Simply specify the file instead of ```./```
