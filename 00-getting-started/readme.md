@@ -60,5 +60,17 @@ This should open a browser window with "Hello world!". Try out browser sync's fe
 
 ## Notes
 
+Some random notes that may be of use.
+
+### Watchers
+
 While watchers are good for file changes, they do not automatically pick up new files when they are added. So you 
 will have to restart gulp by pressing CTRL+C, Y and starting gulp again if you add new files.
+
+### Git Archive
+Want to easily share the project with someone else? Use the following command to generate a zip:
+```
+git archive --format=zip -o css-tutorial.zip HEAD
+```
+
+For more info about git archive: https://git-scm.com/docs/git-archive
