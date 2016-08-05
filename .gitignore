@@ -1,6 +1,12 @@
 .idea
 node_modules
 
+# Generated css files
+**/*/index.css
+
 # Tutorial files
 css-tutorial.zip
-00-getting-started/index.css
+
+# These files are files you create in the process of following this tutorial.
+# Comment them out if you want to share your solutions.
+01-to-css-or-scss/*.scss

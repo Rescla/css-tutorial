@@ -19,6 +19,8 @@ For this tutorial it is assumed you use the following toolchain:
 
 * A browser
 * A text editor or IDE
+    * It is strongly recommended you use software with syntax highlighting for SCSS and HTML for readability
+    * WebStorm (JetBrains) is my personal IDE of preference
 * Node.js (and npm)
     * node-sass
     * browser-sync
@@ -67,16 +69,20 @@ Some random notes that may be of use.
 While watchers are good for file changes, they do not automatically pick up new files when they are added. So you 
 will have to restart gulp by pressing CTRL+C, Y and starting gulp again if you add new files.
 
+Also, .css files are not watched in this tutorial project. So just edit the scss file instead. The tutorials relating
+ to css files have modified watchers, so they work properly.
+
 ### Git Archive
 Want to easily share the project with someone else? Use the following command to generate a zip:
 ```
 git archive --format=zip -o css-tutorial.zip HEAD
 ```
+If you want to include generated files and your solutions, check ``.gitignore`` and comment out the relevant lines.
 
 For more info about git archive: https://git-scm.com/docs/git-archive
 
 ### Git Checkout
-Want to quicky reset a folder to its last committed state, throwing away all changes? Use the following command:
+Want to quickly reset a folder to its last committed state, throwing away all changes? Use the following command:
 ```
 git checkout ./
 ```
@@ -86,3 +92,8 @@ not the entire project!
 
 I recommend copying the folder first, so you don't lose your old changes. Git checkout can also checkout individual 
 files, if an entire folder is too much for your tastes. Simply specify the file instead of ```./```
+
+### Comment syntax
+SCSS: ``/* comment */``
+
+HTML: ``<!-- comment -->``
