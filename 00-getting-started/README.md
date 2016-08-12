@@ -52,7 +52,8 @@ $ npm install -g gulp
 $ npm install
 ```
 
-The first line installs gulp (with the ```-g``` flag) so you can run it directly in cmd using ```gulp```. The second 
+The first line installs gulp (with the ```-g``` flag for 'global' install) so you can run it directly in cmd using 
+```gulp```. The second 
 line installs all dependencies defined in the ```package.json``` file.
 
 * Navigate to the tutorial folder and run ```gulp``` or ```gulp serve``` to start the project.
