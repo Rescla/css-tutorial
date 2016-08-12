@@ -6,3 +6,7 @@ This project hosts the [iAdvise](https://www.iadvise.eu/) - education SCSS/HTML 
 
 I recommend you start with [Chapter 0: Getting Started](./00-getting-started) to get your development environment set
  up.
+ 
+## Contributions
+ 
+... Are always welcome! Feel free to make a pull request or raise an issue.
