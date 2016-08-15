@@ -1,0 +1,4 @@
+body:before {
+    content: 'CSS loaded!';
+    display: block;
+}
