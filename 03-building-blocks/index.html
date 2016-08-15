@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Inline</h1><!-- Inline -->
+
+
+This is some text <span>with an inline span</span>, some <em>important stuff</em>, perhaps even some
+<script>
+    console.log('Hello world!');
+</script>
+JavaScript and a <a href="#">link</a> with some text. <a href="#">A link with a <span>span</span> inside works fine too.</a>
+
+<hr><h1>Block</h1><!-- Block -->
+
+<div>
+    Block 1
+</div>
+With some inline text
+<div>
+    Block 2 <span>with an inline element</span>
+    <div>
+        Block 2.1
+    </div>
+</div>
+
+<hr><h1>List-item</h1><!-- List items -->
+<ul>
+    <li>List item 1</li>
+    <li class="block">List item 2</li>
+    <li class="no-list">List item 3</li>
+</ul>
+
+<ul class="no-padding no-list">
+    <li>These look just like block elements</li>
+    <li>Except they are in an unordered list</li>
+</ul>
+
+<hr><h1>Tables</h1><!-- Tables -->
+<table>
+    <tr>
+        <td>Just</td>
+        <td>Your</td>
+        <td>Regular</td>
+        <td>Table</td>
+    </tr>
+    <tr>
+        <td colspan="3">With some multicols and varying col widths</td>
+    </tr>
+    <tr>
+        <td>Some more cols</td>
+        <td>With <span>spans</span></td>
+        <td>Foo</td>
+        <td>Bar</td>
+    </tr>
+</table>
+
+<br>
+
+<!-- This is the same table as before, but with tr and td display styles changed to flip it on it's side -->
+<table class="sideways">
+    <tr>
+        <td>Just</td>
+        <td>Your</td>
+        <td>Regular</td>
+        <td>Table</td>
+    </tr>
+    <tr>
+        <!-- You'll notice colspan doesn't play nice with this orientation -->
+        <td colspan="3">With some multicols and varying col widths</td>
+    </tr>
+    <tr>
+        <td>Some more cols</td>
+        <td>With <span>spans</span></td>
+        <td>Foo</td>
+        <td>Bar</td>
+    </tr>
+</table>
+
+<br>
+<!-- Same table, sideways, but also inverse! Although you'll notice a vertical alignment issue because of the float -->
+<table class="sideways float-right">
+    <tr>
+        <td>Just</td>
+        <td>Your</td>
+        <td>Regular</td>
+        <td>Table</td>
+    </tr>
+    <tr>
+        <!-- You'll notice colspan doesn't play nice with this orientation -->
+        <td colspan="3">With some multicols and varying col widths</td>
+    </tr>
+    <tr>
+        <td>Some more cols</td>
+        <td>With <span>spans</span></td>
+        <td>Foo</td>
+        <td>Bar</td>
+    </tr>
+</table>
+
+<hr><h1>Inline-block</h1><!-- Inline block with lists -->
+<ul class="inline-list">
+    <li>Menu item 1</li>
+    <li>Menu item 2</li>
+</ul>
+</body>
+</html>

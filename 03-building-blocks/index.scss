@@ -1,0 +1,38 @@
+.block {
+  display: block;
+}
+
+.no-list {
+  list-style: none;
+
+  li {
+    list-style: none;
+  }
+}
+
+.no-padding, .inline-list {
+  padding: 0;
+}
+
+.inline-list li {
+  display: inline-block;
+}
+
+table {
+  &.sideways {
+    tr {
+      display: inline-block;
+
+      td {
+        display: block;
+      }
+    }
+  }
+
+  &.float-right {
+    tr {
+      float: right;
+    }
+  }
+
+}
