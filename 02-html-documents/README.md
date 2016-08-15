@@ -22,7 +22,7 @@ HTML files follow a basic template, below is the default IntelliJ HTML template:
 ## Elements
 
 First we have elements, defined by opening and closing declarations, as a self closed element or just as the start element if it is an element without body, such as `<link>`.
-```
+```html
 <element></element>
 <element/>
 <element>
@@ -30,7 +30,7 @@ First we have elements, defined by opening and closing declarations, as a self c
 
 Elements can have attributes with a value or without value as shorthand for ```true```. Attribute values are enclosed by ```"``` (```'``` will also work, but is not recommended)
 
-```
+```html
 <element attribute="value" />
 <element attribute />
 <element attribute="true" />
