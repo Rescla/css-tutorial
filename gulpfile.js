@@ -10,6 +10,9 @@ var sass = require('gulp-sass');
 // Gulp sourcemaps to keep track of changes between scss and css
 var sourcemaps = require('gulp-sourcemaps');
 
+// Gulp inject to dynamically insert links to subfolders in the root index.html
+var inject = require('gulp-inject');
+
 // Define the default task, is run when you simply run 'gulp'
 gulp.task('default', ['serve']);
 
@@ -34,4 +37,16 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());                // Make sure browserSync knows about the update
 });
 
-
+// Use this to update the subfolder links if you add a new folder
+gulp.task('update-links', function() {
+    return gulp.src('index.html')
+        .pipe(inject(
+            gulp.src('./*/index.html',{read: false, nosort: false}),
+            {
+                transform: function(filepath){
+                    return '<li><a href="' + filepath + '">' + filepath + '</a></li>';
+                }
+            }
+        ))
+        .pipe(gulp.dest('./'));
+});
