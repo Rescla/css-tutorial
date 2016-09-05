@@ -1,0 +1,63 @@
+$size-constant: 6pt;
+
+// Placeholder
+.placeholder {
+  width: 800px;
+  height: 600px;
+  background: lightgrey;
+}
+
+// Fonts
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: $size-constant * 2;
+}
+
+article {
+  margin: $size-constant * 4 0;
+}
+
+dl {
+  color: lightgrey;
+}
+
+figure {
+  display: inline-block;
+}
+
+h1, h2 {
+  margin: $size-constant 0;
+}
+
+h1 {
+  font-size: $size-constant * 4;
+  font-weight:normal;
+  font-family: serif;
+}
+
+h2 {
+  font-size: $size-constant * 2;
+}
+
+// Layout
+
+dl {
+  > * {
+    display: inline-block;
+    margin: 0;
+  }
+  dd:not(:last-child) {
+    &:after {
+      display: inline;
+      content: ' - ';
+      margin: 0 $size-constant;
+    }
+  }
+
+  dt {
+    &:after {
+      content: ':';
+    }
+  }
+}

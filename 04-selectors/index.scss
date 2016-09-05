@@ -1,0 +1,133 @@
+
+
+// Mixins are simple 'macros' to reuse styling.
+// They are 'injected' where they are included, so where it is declared makes no difference, just that is has to be declared before usage.
+@mixin addText($text){
+  // $text is the parameter this mixin is called with. This is mandatory when calling.
+
+  &:before {
+    // Pseudo elements!
+    // They are elements, but they are declared in CSS instead of HTML and come with some limitations.
+    // To 'enable' them, set 'content' to a value other than 'none', this will inject 'content' as text either before or after the element content.
+    content: $text;
+  }
+}
+
+@mixin placeholder($color: rgba(0,0,0,0.1)) {
+  // Note that this mixin has a parameter with a default value.
+  // If the value is given, that value is used, otherwise the default value declared here.
+  height: 50px;
+  width: 50px;
+
+  background: $color;
+  // Rgba is a CSS standard notation to declare a color with Red, Green, Blue and Alpha (opacity) components.
+  // R, G and B are 0-255 and A 0-1
+  // The default color here (rgba(0,0,0,0.1)) is a black color with an opacity of 10%, so it appears light grey but will turn darker when stacked.
+}
+
+li {
+  // Getting rid of the list styling
+  list-style: none;
+}
+
+ul {
+  // Getting rid of the default padding on unordered lists
+  padding: 0;
+}
+
+.placeholder {
+  // Using a mixin
+  // This is just to add some physical size to elements so it is easier to see what is happening
+  @include placeholder();
+}
+
+ul li {
+  @include placeholder();
+}
+
+.col {
+  // Columns just to align things in horizontal columns
+  display: inline-block;
+}
+
+// Examples
+// Type selectors
+foo {
+  // Using a mixin with parameter
+  @include addText("this is foo");
+}
+
+span {
+  @include addText("This is span");
+}
+
+// Class selectors
+.class-1 {
+  @include placeholder(blue);
+}
+
+.class-2 {
+  @include placeholder(green);
+}
+
+.class-3 {
+  @include placeholder(navy);
+}
+
+.class-3-1 {
+  @extend .class-3;
+  // This extends .class-3, so it's the same but applied to a different class
+  // Extending is fairly expensive if the extended class is referred to a lot in other selectors, try it out and see what css is generated.
+  // Also note how the ordering is reversed, yet they are applied in the same order as before
+}
+
+.class-2-1 {
+  @extend .class-2;
+}
+
+.class-1-1 {
+  @extend .class-1;
+}
+
+.class-3-2 {
+  @include placeholder(navy);
+}
+
+.class-2-2 {
+  @include placeholder(green);
+}
+
+.class-1-2 {
+  @include placeholder(blue);
+}
+
+// N-th child examples
+.nth-1 {
+  li:nth-child(2n) {
+    @include placeholder(red);
+  }
+}
+
+.nth-1-alt {
+  li:nth-child(even){
+    @include placeholder(orange);
+  }
+}
+
+.nth-2 {
+  li:nth-child(2n+1) {
+    @include placeholder(red);
+  }
+}
+
+.nth-2-alt {
+  li:nth-child(odd) {
+    @include placeholder(orange);
+  }
+}
+
+.nth-3 {
+  li:nth-last-child(2n){
+    @include placeholder(blue);
+  }
+}
